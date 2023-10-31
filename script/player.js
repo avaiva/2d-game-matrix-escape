@@ -38,5 +38,7 @@ class Player {
         if (this.top > this.matrixBody.clientHeight - this.height) {
             this.top = this.matrixBody.clientHeight - this.height;
         }
+
+        // this is just a test
     }
 }
