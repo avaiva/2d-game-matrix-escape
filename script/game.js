@@ -20,8 +20,14 @@ class Game {
         this.GameIsOver = false;
     }
 
-    start() {
+    intro() {
         this.splashScreen.style.display = "none";
+        this.introScreen.style.display = "block";
+    }
+
+
+    start() {
+        this.introScreen.style.display = "none";
         this.gameScreen.style.display = "block";
         this.gameLoop();
     }

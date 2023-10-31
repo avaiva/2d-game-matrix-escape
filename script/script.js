@@ -1,14 +1,22 @@
 window.onload = function() {
     const readyButton = document.getElementById("btn-ready");
+    const startGameButton = document.getElementById("btn-start");
 
     let game = new Game();
 
-    readyButton.addEventListener("click", startGame);
+
+    function introGame() {
+        console.log("game intro started");
+        game.intro();
+    }
 
     function startGame() { 
         console.log("start game");
         game.start();	
     }
+
+    readyButton.addEventListener("click", introGame);
+    startGameButton.addEventListener("click", startGame);
 
     function handleKeyDown(event) {
         switch (event.keyCode) {
