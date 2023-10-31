@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+    
+    <title>Matrix Escpae: Debugging Reloaded</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="splash-screen">
+            <div class="container splash">
+                <h1>Matrix Escape</h1> 
+                <h4>Free your mind</h4>
+                <button id="btn-ready" type="button">I'm ready</button> 
+            </div>
+        </div>
+        <div id="intro-screen">
+            <div class="container intro">
+                <h6>Matrix Escape/</h6>
+                <h1>Debugging reloaded</h1>
+                <div class="container-small">  
+                    <section id="intro-page1">
+                        <p> Hello ....</p>
+                        <button id="btn-next" type="button">I'm ready</button> 
+                    </section>
+                    <section id="intro-page2">
+                        <p> How to play </p>
+                        <button id="btn-back" type="button">I'm ready</button> 
+                        <button id="btn-next" type="button">I'm ready</button> 
+                    </section>
+                    <section id="intro-page3">
+                        <p> How to play </p>
+                        <button id="btn-back" type="button">I'm ready</button> 
+                        <button id="btn-start" type="button">I'm ready</button> 
+                    </section>
+                </div>           
+            </div>
+        </div>
+        <div id="game-screen">
+            <div class="container game">
+                <section id="timer"> </section>
+                <section class="matrix-area">
+                    <div class="matrix-title">
+                        <h6> Matrix Escape/ Debugging reloaded</h6>
+                    </div>
+                    <div id="matrix-body"></div>    
+                </section>
+                <section class="console-area">
+                    <div class="console-title">
+                        <h6> Console </h6>
+                    </div>
+                    <div id="console-body"></div>  
+                </section>
+                <section class="score-area">
+                    <div class="score-title">
+                        <h6> Your score</h6>
+                    </div>
+                    <div class="score-body">
+                        <p> Bugs found <span> 0 </span></p>
+                    </div>  
+                </section>
+            </div>
+        </div>
+        <div id="end-screen">
+            <div class="container end-screen">
+                <h1>This is the end</h1> 
+                <button id="btn-restart" type="button">I'm ready</button> 
+            </div>
+        </div>     
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
