@@ -64,13 +64,12 @@ h6 {
 
 #splash-screen {
     width: 1280px;
-    height: 1000px;
+    height: 1080px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-
     background-image: url("https://media1.giphy.com/media/sULKEgDMX8LcI/giphy.gif");
     background-size: cover;
     background-repeat: no-repeat;
@@ -155,7 +154,10 @@ h6 {
   margin: 0; /* Remove margin */
   padding: 0; /* Remove padding */
   border-bottom: 1px solid #7FEAA1;
+}
 
+.matrix-area {
+    height: 100%;
 }
 
 .console-area {
@@ -165,7 +167,8 @@ h6 {
 }
 
 .score-area {
-    width: 39.9%
+    width: 39.9%;
+    height: 40%;
 }
 
 .matrix-title {
@@ -181,6 +184,10 @@ h6 {
     margin-left: 15px;
 }
 
+#matrix-body {
+    height: calc(100% - 50px);
+}
+
 .console-title {
     display: flex; /* Use flexbox to center content */
     justify-content: flex-start;
@@ -194,8 +201,12 @@ h6 {
     margin-left: 15px;
 }
 
+#console-body {
+    height: calc(100% - 50px);
+}
+
 .score-title {
-    display: flex; /* Use flexbox to center content */
+    display: flex;
     justify-content: flex-start;
     width: 250px;
     height: 50px;
@@ -206,6 +217,34 @@ h6 {
     margin-top: 5px;
     margin-left: 15px;
 }
+
+
+.score-body {
+    height: calc(100% - 80px);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.score-table {
+    margin: 20px;
+    width: 100%; 
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+td {
+    padding: 10px;
+    font-family: 'Khula', sans-serif;
+    font-size: 28px; 
+    color: white;
+}
+
+.table-col2 {
+    padding-left: 120px;
+}
+
 
 #end-screen { 
     display: none;
