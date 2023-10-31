@@ -116,7 +116,7 @@ h6 {
 }
 
 #btn-ready:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     color: #FFF;
     cursor: pointer;
 }
@@ -186,6 +186,7 @@ h6 {
 
 #matrix-body {
     height: calc(100% - 50px);
+    position: relative;
 }
 
 .console-title {
