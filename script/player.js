@@ -41,4 +41,22 @@ class Player {
 
         // this is just a test
     }
+
+
+    didCollide(bug) {
+        if(
+            this.left < bug.left + bug.width &&
+            this.left + this.width > bug.left &&
+            this.top < bug.top + bug.height &&
+            this.top + this.height > bug.top
+        ) {
+            console.log("collision");
+            return true;
+            
+        } else {
+            console.log("passed car")
+            return false;
+        }
+    }
+
 }
