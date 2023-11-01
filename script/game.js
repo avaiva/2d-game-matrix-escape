@@ -15,7 +15,7 @@ class Game {
             50,
             "/images/player-test.png"
         );
-        this.bugs = null;
+        this.bug = [new Bug(this.matrixBody)];
         this.errors = null;
         this.score = 0;
         this.GameIsOver = false;
@@ -76,7 +76,9 @@ class Game {
 
     update() {
         // console.log("updated");
-        this.player.move()
+        this.player.move();
+        // this.bug.move();
+        this.player.didCollide();
     }
 
     endGame() {
