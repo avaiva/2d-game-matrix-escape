@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -64,7 +64,7 @@ h6 {
 
 #splash-screen {
     width: 1280px;
-    height: 1080px;
+    height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,6 +132,86 @@ h6 {
 
 #intro-screen { 
     display: none;
+}
+
+.container-intro {
+    width: 1280px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+}
+
+.container-intro > h6 {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.container-intro > h1 {
+    margin-left: 15px;
+}
+
+.intro-center-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-center-image > img {
+    width: 77%;
+    height: auto;
+}
+
+/* #intro-canvas {
+    position: absolute;
+    width: 600px;
+    height:400px;
+    background-color: white;
+
+} */
+
+#btn-start {
+    width: 205px;
+    height: 70px;
+    border: 2px solid #6EFFDDCC;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #FFF;
+    text-align: center;
+    text-shadow:
+    1px 1px 0 #6EFFDDCC,
+    -1px 1px 0 #7FEAA1,
+    -1px -1px 0 #6EFFDDCC,
+    1px -1px 0 #7FEAA1;
+    font-family: 'Courier Prime', monospace;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.75px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 81vh;
+    right: 0;
+}
+
+#btn-start:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #FFF;
+    cursor: pointer;
+}
+
+#btn-start:active {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.container-small {
+    display:none;
 }
 
 #game-screen { 
