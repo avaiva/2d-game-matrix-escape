@@ -141,6 +141,7 @@ h6 {
     flex-direction: column;
     align-items: flex-start;
     overflow: hidden;
+    position: relative;
 }
 
 .container-intro > h6 {
@@ -161,6 +162,52 @@ h6 {
 .intro-center-image > img {
     width: 77%;
     height: auto;
+}
+
+/* #intro-canvas {
+    position: absolute;
+    width: 600px;
+    height:400px;
+    background-color: white;
+
+} */
+
+#btn-start {
+    width: 205px;
+    height: 70px;
+    border: 2px solid #6EFFDDCC;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #FFF;
+    text-align: center;
+    text-shadow:
+    1px 1px 0 #6EFFDDCC,
+    -1px 1px 0 #7FEAA1,
+    -1px -1px 0 #6EFFDDCC,
+    1px -1px 0 #7FEAA1;
+    font-family: 'Courier Prime', monospace;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.75px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 81vh;
+    right: 0;
+}
+
+#btn-start:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #FFF;
+    cursor: pointer;
+}
+
+#btn-start:active {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 10px;
 }
 
 .container-small {
