@@ -1,3 +1,9 @@
+/* @font-face {
+    font-family: "Digit Numbers";
+    src: url("fonts/ds-digib.ttf");
+} */
+
+
 html, body {
     height: 100vh;
     margin: 0;
@@ -280,14 +286,24 @@ h6 {
     color: white;
     position: absolute;
     right: 500px;
-    top: 17px;
+    top: 20px;
     z-index: 1;
 }
 
-.number {
+.dots{
     font-family: 'Orbitron', sans-serif;
-    /* font-family: 'Courier Prime', monospace; */
-    font-size: 28px;
+    font-size: 25px;
+}
+
+.number {
+    /* font-family: "Courier Prime", monospace */
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Sorts Mill Goudy', serif; */
+    /* font-family: "Digit Numbers"; */
+    display: inline-block;
+    width: 22px;
+    font-size: 25px;
+    text-align: center;
 }
 
 #matrix-body {
