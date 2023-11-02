@@ -11,7 +11,7 @@ class Timer {
     start() {
         this.interval = setInterval(() => {
             this.time--;
-            console.log(this.time);
+            // console.log(this.time);
             this.printTime();
             if (this.time <= 0) {
                 console.log("game should end");

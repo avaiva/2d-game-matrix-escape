@@ -7,6 +7,8 @@ class Game {
         this.matrixBody = document.getElementById("matrix-body");
         this.consoleBody = document.getElementById("console-body");
         this.introTextCanvas = document.getElementById("intro-canvas");
+        this.bugsFound = document.getElementById("found-bug-count");
+        this.score = document.getElementById("score");
         this.player = new Player(
             this.matrixBody,
             0,
@@ -17,8 +19,9 @@ class Game {
         );
         this.timer = new Timer(180,this);
         this.bug = [new Bug(this.matrixBody)];
+        this.bugsFoundCount = 0;
         this.errors = null;
-        this.score = 0;
+        this.scoreCount = 0;
         this.gameIsOver = false;
 
     }
@@ -82,8 +85,22 @@ class Game {
         // console.log("updated");
         this.player.move();
         // this.bug.move();
-        // this.player.didCollide();
-    }
+        if(this.player.didCollide(this.bug[0])){
+            this.bugsFoundCount += 1;
+            this.bugsFound.innerHTML = `${this.bugsFoundCount}`;
+            console.log(this.bugsFound);
+            
+            this.scoreCount += 10;
+            this.score.innerHTML = `${this.scoreCount}`;
+            console.log(this.score);
+            
+            this.bug[0].element.remove();
+            this.bug.pop();
+            this.bug.unshift(new Bug);
+            console.log(this.bug)
+            // this.bug.push(new Bug(this.matrixBody));
+        }
+        }
 
     endGame() {
         console.log("end game");

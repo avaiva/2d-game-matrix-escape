@@ -50,11 +50,9 @@ class Player {
             this.top < bug.top + bug.height &&
             this.top + this.height > bug.top
         ) {
-            console.log("collision");
             return true;
             
         } else {
-            console.log("no collision")
             return false;
         }
     }
