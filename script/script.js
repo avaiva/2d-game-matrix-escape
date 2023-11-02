@@ -1,6 +1,8 @@
 window.onload = function() {
     const readyButton = document.getElementById("btn-ready");
-    const startGameButton = document.getElementById("btn-re-start");
+    const startGameButton = document.getElementById("btn-start");
+    const restartGameButton = document.getElementById("btn-restart");
+    const backToIntroButton = document.getElementById("btn-back-to-intro");
 
     let game = new Game();
 
@@ -16,8 +18,16 @@ window.onload = function() {
         game.timer.start(game.endGame);	
     }
 
+    function restartGame() { 
+        game = new Game();
+        game.start();
+        game.timer.start(game.endGame);	
+    }
+
     readyButton.addEventListener("click", introGame);
     startGameButton.addEventListener("click", startGame);
+    restartGameButton.addEventListener("click", restartGame);
+    backToIntroButton.addEventListener("click", introGame)
 
     function handleKeyDown(event) {
         switch (event.keyCode) {

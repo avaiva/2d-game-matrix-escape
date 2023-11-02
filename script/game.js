@@ -25,6 +25,7 @@ class Game {
 
     intro() {
         this.splashScreen.style.display = "none";
+        this.endScreen.style.display = "none";
         this.introScreen.style.display = "block";
         console.log(this.endScreen);
         // this.displayIntroText();
@@ -59,6 +60,7 @@ class Game {
 
     start() {
         this.introScreen.style.display = "none";
+        this.endScreen.style.display = "none";
         this.gameScreen.style.display = "block";
         this.gameLoop();
     }

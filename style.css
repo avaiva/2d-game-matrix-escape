@@ -172,7 +172,7 @@ h6 {
 
 } */
 
-#btn-re-start {
+.btn-re-start {
     width: 205px;
     height: 70px;
     border: 2px solid #6EFFDDCC;
@@ -196,13 +196,13 @@ h6 {
     right: 0;
 }
 
-#btn-re-start:hover {
+.btn-re-start:hover {
     background-color: rgba(0, 0, 0, 0.75);
     color: #FFF;
     cursor: pointer;
 }
 
-#btn-re-start:active {
+.btn-re-start:active {
     background-color: rgba(0, 0, 0, 0.5);
     color: #FFF;
     cursor: pointer;
@@ -329,4 +329,9 @@ td {
 
 #end-screen { 
     display: none;
+}
+
+.btn-back {
+    top: 81vh;
+    right: 500px;
 }
