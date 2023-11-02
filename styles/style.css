@@ -361,8 +361,14 @@ td {
     color: white;
 }
 
+.td-width{
+    width: 200px;
+    white-space: nowrap;
+}
+
 .table-col2 {
     padding-left: 120px;
+    text-align: right;
 }
 
 

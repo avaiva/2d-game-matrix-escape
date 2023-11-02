@@ -15,6 +15,7 @@ class Player {
         this.element.style.width = `${width}px`;
         this.element.style.height = `${height}px`;
         this.matrixBody.appendChild(this.element);
+        this.collisionBugIndex = 0;
     }
 
     move() {
@@ -50,13 +51,22 @@ class Player {
             this.top < bug.top + bug.height &&
             this.top + this.height > bug.top
         ) {
-            console.log("collision");
             return true;
             
         } else {
-            console.log("no collision")
             return false;
         }
+    }
+
+
+    didCollideWithAnyBug(bugs) {
+        for (const bug of bugs) {
+            if(this.didCollide(bug)) {
+                this.collisionBugIndex = bugs.indexOf(bug);
+                return true;
+            }
+        }
+        return false;
     }
 
 }
