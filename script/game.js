@@ -122,12 +122,22 @@ class Game {
 
   update() {
     this.player.move();
-    if (this.player.didCollide(this.bug)) {
-      this.bugsFoundCount += 1;
+
+    if(this.player.didCollideWithAnyBug(this.bug)) {
+      this.bugsFoundCount++;
       this.bugsFound.innerHTML = `${this.bugsFoundCount}`;
 
       this.scoreCount += 10;
       this.score.innerHTML = `${this.scoreCount}`;
+      this.bug[this.player.collisionBugIndex].element.remove();
+      this.bug = this.bug.filter((bug) => !this.player.didCollide(bug))
+    }
+    // if (this.player.didCollide(this.bug)) {
+    //   this.bugsFoundCount += 1;
+    //   this.bugsFound.innerHTML = `${this.bugsFoundCount}`;
+
+    //   this.scoreCount += 10;
+    //   this.score.innerHTML = `${this.scoreCount}`;
 
       // for (let i = 0; i < this.bug; i++) {
       //   this.bug[i].element.remove();
@@ -143,13 +153,13 @@ class Game {
       // this.amountOfBugs++;
       // // this.bug.push(new Bug(this.matrixBody));
     }
-  }
 
   endGame() {
     console.log("end game");
     this.endScreen.style.display = "block";
     this.gameScreen.style.display = "none";
     this.player.element.remove();
-    this.bug[0].element.remove();
+    this.bug.element.remove();
   }
+
 }
