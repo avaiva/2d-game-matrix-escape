@@ -24,10 +24,15 @@ window.onload = function() {
         game.timer.start(game.endGame);	
     }
 
+    function backToIntro() { 
+        game = new Game();
+        game.intro();
+    }
+
     readyButton.addEventListener("click", introGame);
     startGameButton.addEventListener("click", startGame);
     restartGameButton.addEventListener("click", restartGame);
-    backToIntroButton.addEventListener("click", introGame)
+    backToIntroButton.addEventListener("click", backToIntro)
 
     function handleKeyDown(event) {
         switch (event.keyCode) {
