@@ -78,7 +78,7 @@ class Game {
         // console.log("updated");
         this.player.move();
         // this.bug.move();
-        this.player.didCollide();
+        // this.player.didCollide();
     }
 
     endGame() {
