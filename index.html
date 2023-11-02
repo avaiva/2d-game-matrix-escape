@@ -18,11 +18,11 @@
                 <button id="btn-ready" type="button">I'm ready</button>   
         </div>
         <div id="intro-screen">
-            <div class="container-intro">
+            <div class="container">
                 <h6>Matrix Escape/</h6>
                 <h1>Debugging reloaded</h1>
-                <button id="btn-start" type="button">Enter Matrix</button> 
-                <div class="intro-center-image">
+                <button id="btn-start" class="btn-standard btn-start" type="button">Enter Matrix</button> 
+                <div class="center-image">
                     <img src="/images/computer-mockup.png" class="img-mockup">
                     <canvas id = "intro-canvas"> </canvas>
                 </div>
@@ -88,14 +88,24 @@
             </div>
         </div>
         <div id="end-screen">
-            <div class="container end-screen">
+            <div class="container">
+                <h6>Matrix Escape/</h6>
                 <h1>This is the end</h1> 
-                <button id="btn-restart" type="button">I'm ready</button> 
+                <button id="btn-back-to-intro" class="btn-standard btn-back" type="button">To Intro</button>
+                <button id ="btn-restart" class="btn-standard btn-restart" type="button">Enter Matrix</button> 
+                <div class="center-image">
+                  <img src="/images/computer-mockup.png" class="img-mockup">
+                  <div class="endtext">
+                    <div class="gif-container"> </div>
+                    <p> </p>
+                  </div>
+                  <canvas id = "intro-canvas"> </canvas>
+                </div> 
             </div>
         </div>     
 
     </main>
-    
+    <script src="/script/timer.js" type="text/javascript"></script>
     <script src="/script/player.js" type="text/javascript"></script>
     <script src="/script/bugs.js" type="text/javascript"></script>
     <script src="/script/game.js" type="text/javascript"></script>

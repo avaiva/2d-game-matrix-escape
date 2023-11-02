@@ -134,7 +134,7 @@ h6 {
     display: none;
 }
 
-.container-intro {
+.container {
     width: 1280px;
     height: 900px;
     display: flex;
@@ -144,22 +144,22 @@ h6 {
     position: relative;
 }
 
-.container-intro > h6 {
+.container > h6 {
     margin-top: 10px;
     margin-left: 15px;
 }
 
-.container-intro > h1 {
+.container > h1 {
     margin-left: 15px;
 }
 
-.intro-center-image {
+.center-image {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.intro-center-image > img {
+.center-image > img {
     width: 77%;
     height: auto;
 }
@@ -172,7 +172,7 @@ h6 {
 
 } */
 
-#btn-start {
+.btn-standard {
     width: 205px;
     height: 70px;
     border: 2px solid #6EFFDDCC;
@@ -192,23 +192,28 @@ h6 {
     letter-spacing: 3.75px;
     text-transform: uppercase;
     position: absolute;
-    top: 81vh;
-    right: 0;
 }
 
-#btn-start:hover {
+.btn-standard:hover {
     background-color: rgba(0, 0, 0, 0.75);
     color: #FFF;
     cursor: pointer;
 }
 
-#btn-start:active {
+.btn-standard:active {
     background-color: rgba(0, 0, 0, 0.5);
     color: #FFF;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 10px;
 }
+
+
+.btn-start{
+    top: 81vh;
+    right: 0;
+}
+
 
 .container-small {
     display:none;
@@ -329,4 +334,15 @@ td {
 
 #end-screen { 
     display: none;
+}
+
+.btn-restart{
+    top: 81vh;
+    right: 0;
+}
+
+
+.btn-back {
+    top: 71vh;
+    right: 0px;
 }
