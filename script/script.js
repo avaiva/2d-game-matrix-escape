@@ -1,6 +1,6 @@
 window.onload = function() {
     const readyButton = document.getElementById("btn-ready");
-    const startGameButton = document.getElementById("btn-start");
+    const startGameButton = document.getElementById("btn-re-start");
 
     let game = new Game();
 
@@ -12,7 +12,8 @@ window.onload = function() {
 
     function startGame() { 
         console.log("start game");
-        game.start();	
+        game.start();
+        game.timer.start(game.endGame);	
     }
 
     readyButton.addEventListener("click", introGame);

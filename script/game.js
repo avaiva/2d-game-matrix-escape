@@ -15,16 +15,18 @@ class Game {
             50,
             "/images/player-test.png"
         );
+        this.timer = new Timer(3,this);
         this.bug = [new Bug(this.matrixBody)];
         this.errors = null;
         this.score = 0;
-        this.GameIsOver = false;
+        this.gameIsOver = false;
 
     }
 
     intro() {
         this.splashScreen.style.display = "none";
         this.introScreen.style.display = "block";
+        console.log(this.endScreen);
         // this.displayIntroText();
     }
 
@@ -82,8 +84,11 @@ class Game {
     }
 
     endGame() {
-        this.GameIsOver = true;
+        console.log("end game");
         this.endScreen.style.display = "block";
+        this.gameScreen.style.display = "none";
+        this.player.element.remove();
+        this.bug[0].element.remove();
     }
 
 }
