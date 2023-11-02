@@ -17,7 +17,7 @@ class Game {
       50,
       "/images/player-test.png"
     );
-    this.timer = new Timer(60, this);
+    this.timer = new Timer(10, this);
     this.bug = [new Bug(this.matrixBody)];
     this.bugsCreatedCount = 1;
     this.bugsFoundCount = 0;
@@ -132,6 +132,7 @@ class Game {
   }
 
   endGame() {
+    this.gameIsOver = true;
     console.log("end game");
     this.endScreen.style.display = "block";
     this.gameScreen.style.display = "none";
@@ -139,6 +140,8 @@ class Game {
     this.bug.forEach((bug) => {
       bug.element.remove();
     });
+    this.scoreCount = 0;
+    this.bugsFoundCount = 0;
     clearInterval(this.bugCreationInterval);
   }
 }

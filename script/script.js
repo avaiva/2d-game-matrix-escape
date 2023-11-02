@@ -21,7 +21,9 @@ window.onload = function() {
     function restartGame() { 
         game = new Game();
         game.start();
-        game.timer.start(game.endGame);	
+        game.timer.start(game.endGame);
+        game.score.innerHTML = `${game.scoreCount}`;
+        game.bugsFound.innerHTML = `${game.bugsFoundCount}`;	
     }
 
     function backToIntro() { 
@@ -37,19 +39,19 @@ window.onload = function() {
     function handleKeyDown(event) {
         switch (event.keyCode) {
             case 37:
-                game.player.directionX = -2;
+                game.player.directionX = -1;
                 event.preventDefault();
                 break;
             case 38:
-                game.player.directionY = -2;
+                game.player.directionY = -1;
                 event.preventDefault();
                 break;
             case 39:
-                game.player.directionX = 2;
+                game.player.directionX = 1;
                 event.preventDefault();
                 break;
             case 40:
-                game.player.directionY = 2;
+                game.player.directionY = 1;
                 event.preventDefault();
                 break;
         }
