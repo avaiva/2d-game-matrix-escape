@@ -54,7 +54,7 @@ class Player {
             return true;
             
         } else {
-            console.log("passed car")
+            console.log("no collision")
             return false;
         }
     }
