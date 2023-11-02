@@ -37,19 +37,19 @@ window.onload = function() {
     function handleKeyDown(event) {
         switch (event.keyCode) {
             case 37:
-                game.player.directionX = -10;
+                game.player.directionX = -2;
                 event.preventDefault();
                 break;
             case 38:
-                game.player.directionY = -10;
+                game.player.directionY = -2;
                 event.preventDefault();
                 break;
             case 39:
-                game.player.directionX = 10;
+                game.player.directionX = 2;
                 event.preventDefault();
                 break;
             case 40:
-                game.player.directionY = 10;
+                game.player.directionY = 2;
                 event.preventDefault();
                 break;
         }
