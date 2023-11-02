@@ -17,7 +17,7 @@ class Game {
       50,
       "/images/player-test.png"
     );
-    this.timer = new Timer(10, this);
+    this.timer = new Timer(30, this);
     this.bug = [new Bug(this.matrixBody)];
     this.bugsCreatedCount = 1;
     this.bugsFoundCount = 0;
