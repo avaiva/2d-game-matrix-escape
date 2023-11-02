@@ -17,26 +17,21 @@ class Game {
       50,
       "/images/player-test.png"
     );
-    this.timer = new Timer(180, this);
+    this.timer = new Timer(30, this);
     this.bug = [new Bug(this.matrixBody)];
-    this.bugsCreatedCount= 1;
+    this.bugsCreatedCount = 1;
     this.bugsFoundCount = 0;
     this.errors = null;
     this.scoreCount = 0;
     this.gameIsOver = false;
-    // this.amountOfBugs = 1;
-      // setInterval(() => {
-      //   if (this.bug.length < 5) {
-      //   this.bug.push(new Bug(this.matrixBody));}
-      // }, this.randomInterval());
-      this.bugCreationInterval = null; 
-  }  
+    this.bugCreationInterval;
+    this.bugCreationIntervalRunning = false;
+  }
 
   intro() {
     this.splashScreen.style.display = "none";
     this.endScreen.style.display = "none";
     this.introScreen.style.display = "block";
-    // console.log(this.endScreen);
     // this.displayIntroText();
   }
 
@@ -75,42 +70,41 @@ class Game {
   }
 
   startBugCreation() {
+    this.bugCreationIntervalRunning = true;
     this.bugCreationInterval = setInterval(() => {
-        this.bug.push(new Bug(this.matrixBody));
-        this.checkBugs();
+      this.bug.push(new Bug(this.matrixBody));
+      this.checkBugs();
     }, this.randomInterval());
   }
 
   stopBugCreation() {
     clearInterval(this.bugCreationInterval);
+    this.bugCreationIntervalRunning = false;
   }
 
   checkBugs() {
     if (this.bug.length >= 5) {
-      console.log("Creation Stopped")
-      this.stopBugCreation(); // Pause bug creation when there are 5 bugs.
+      console.log("Creation Stopped");
+      this.stopBugCreation();
     } else {
-      console.log("Checked but still under 5")
-      console.log(this.bug)
-      console.log(this.bug.length)
-      // this.startBugCreation(); // Resume bug creation when there are fewer than 5 bugs.
+       if(!this.bugCreationIntervalRunning) {
+        console.log("Creation Restarted")
+        this.startBugCreation();
+       }
     }
   }
 
   randomInterval() {
-    const randomTimeArray = [
-      500, 1000, 3000,
-    ];
+    const randomTimeArray = [250, 500, 1000, 3000];
     const indexRandomTime = Math.floor(Math.random() * randomTimeArray.length);
     console.log(randomTimeArray[indexRandomTime]);
     return randomTimeArray[indexRandomTime];
   }
 
-
   gameLoop() {
     // console.log("game loop");
 
-    if (this.GameIsOver) {
+    if (this.gameIsOver) {
       return;
     }
 
@@ -123,43 +117,31 @@ class Game {
   update() {
     this.player.move();
 
-    if(this.player.didCollideWithAnyBug(this.bug)) {
+    if (this.player.didCollideWithAnyBug(this.bug)) {
       this.bugsFoundCount++;
       this.bugsFound.innerHTML = `${this.bugsFoundCount}`;
 
       this.scoreCount += 10;
       this.score.innerHTML = `${this.scoreCount}`;
       this.bug[this.player.collisionBugIndex].element.remove();
-      this.bug = this.bug.filter((bug) => !this.player.didCollide(bug))
+      this.bug = this.bug.filter((bug) => !this.player.didCollide(bug));
+
+      this.checkBugs();
+      console.log("bugsChecked Method called");
     }
-    // if (this.player.didCollide(this.bug)) {
-    //   this.bugsFoundCount += 1;
-    //   this.bugsFound.innerHTML = `${this.bugsFoundCount}`;
-
-    //   this.scoreCount += 10;
-    //   this.score.innerHTML = `${this.scoreCount}`;
-
-      // for (let i = 0; i < this.bug; i++) {
-      //   this.bug[i].element.remove();
-      // }
-
-      // this.checkBugs.bug()
-
-      // Exponential growth
-      // this.bug = [];
-      // for (let i = 0; i < this.amountOfBugs; i++) {
-      // this.bug.unshift(new Bug(this.matrixBody));
-      // }
-      // this.amountOfBugs++;
-      // // this.bug.push(new Bug(this.matrixBody));
-    }
+  }
 
   endGame() {
+    this.gameIsOver = true;
     console.log("end game");
     this.endScreen.style.display = "block";
     this.gameScreen.style.display = "none";
     this.player.element.remove();
-    this.bug.element.remove();
+    this.bug.forEach((bug) => {
+      bug.element.remove();
+    });
+    this.scoreCount = 0;
+    this.bugsFoundCount = 0;
+    clearInterval(this.bugCreationInterval);
   }
-
 }
