@@ -33,7 +33,6 @@ class Bug {
             const indexDirection = Math.floor(Math.random() * directionArr.length);
             let moveDirection = directionArr[indexDirection];
             
-        
             
             // check if direction was already used before
             
@@ -118,4 +117,5 @@ class Bug {
                             }
                         }
         }
+
     }
