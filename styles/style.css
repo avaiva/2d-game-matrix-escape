@@ -1,3 +1,9 @@
+/* @font-face {
+    font-family: "Digit Numbers";
+    src: url("fonts/ds-digib.ttf");
+} */
+
+
 html, body {
     height: 100vh;
     margin: 0;
@@ -241,9 +247,9 @@ h6 {
   border-bottom: 1px solid #7FEAA1;
 }
 
-.matrix-area {
-    height: 100%;
-}
+
+
+
 
 .console-area {
   width: 60%;
@@ -256,6 +262,13 @@ h6 {
     height: 40%;
 }
 
+
+.matrix-area {
+    height: 100%;
+    position: relative;
+}
+
+
 .matrix-title {
     display: flex; /* Use flexbox to center content */
     justify-content: flex-start;
@@ -267,6 +280,30 @@ h6 {
 .matrix-title > h6 {
     margin-top: 5px;
     margin-left: 15px;
+}
+
+#timer {
+    color: white;
+    position: absolute;
+    right: 500px;
+    top: 20px;
+    z-index: 1;
+}
+
+.dots{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+}
+
+.number {
+    /* font-family: "Courier Prime", monospace */
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Sorts Mill Goudy', serif; */
+    /* font-family: "Digit Numbers"; */
+    display: inline-block;
+    width: 22px;
+    font-size: 25px;
+    text-align: center;
 }
 
 #matrix-body {
