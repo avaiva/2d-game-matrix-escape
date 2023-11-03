@@ -6,7 +6,7 @@ class Bug {
         this.width = 25;
         this.height = 25;
         this.element = document.createElement("img");
-        this.element.src = "/images/bug-test.png";
+        this.element.src = "./images/bug-test.png";
         this.element.style.position ="absolute";
         this.element.style.left = `${this.left}px`;
         this.element.style.top = `${this.top}px`;
